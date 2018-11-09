@@ -6,6 +6,6 @@
 *.iws
 *.iml
 *.ipr
-.mvn
+.mvne
 mvnw
 mvnw.cmd
