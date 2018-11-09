@@ -5,5 +5,4 @@ import ru.ifmo.se.vkhack.domain.Worker;
 
 public interface WorkerRepository extends CrudRepository<Worker, Long> {
     Iterable<Worker> findAllBySurname(String surname);
-
 }

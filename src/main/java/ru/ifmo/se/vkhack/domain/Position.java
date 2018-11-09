@@ -1,6 +1,7 @@
 package ru.ifmo.se.vkhack.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Collection;
 
@@ -10,6 +11,7 @@ public class Position {
     @OneToMany(mappedBy = "id_worker")
     private Collection<Worker> workers;
 
+    @Id
     private String name;
 
     public void setName(String name) {
