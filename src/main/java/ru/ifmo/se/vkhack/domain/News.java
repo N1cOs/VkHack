@@ -1,8 +1,6 @@
 package ru.ifmo.se.vkhack.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -17,6 +15,8 @@ public class News {
     private Date targetTime;
 
 
+    @ManyToOne
+    @JoinColumn(name = "number")
     private Department department;
 
     public void setDepartment(Department department) {
