@@ -13,11 +13,26 @@ public class Worker {
     private String patronymic;
     private String email;
     private String phone;
+
     @Column(name = "work_time")
     private String workTime;
+
     @ManyToOne
     @JoinColumn(name = "id_position")
     private Position position;
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Department getDepartment() {
+
+        return department;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_department")
+    private Department department;
 
     public void setIdWorker(Long idWorker) {
         this.idWorker = idWorker;

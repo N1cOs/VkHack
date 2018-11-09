@@ -10,13 +10,29 @@ public class News {
     @Column(name = "id_new")
     private Long idNews;
 
+    @JoinColumn(name = "id_creator")
+    @ManyToOne
+    private Worker workerCreator;
+
     private String description;
+    @Column(name = "creating_time")
     private Date createdTime;
+    @Column(name = "target_time")
     private Date targetTime;
 
 
+    public void setWorkerCreator(Worker workerCreator) {
+        this.workerCreator = workerCreator;
+    }
+
+    public Worker getWorkerCreator() {
+
+        return workerCreator;
+    }
+
+
+    @JoinColumn(name = "id_department")
     @ManyToOne
-    @JoinColumn(name = "number")
     private Department department;
 
     public void setDepartment(Department department) {
