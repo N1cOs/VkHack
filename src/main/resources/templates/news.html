@@ -57,12 +57,42 @@
             <div class="card-body collapse" id="collapseExample">
                 <form>
                     <div class="form-group">
+                        <label for="headingText">Заголовок</label>
+                        <input type="email" class="form-control" id="headingText" placeholder="Заголовок">
+                    </div>
+                    <div class="form-group">
                         <label for="newsText">Текст</label>
                         <div class="input-group">
                             <textarea id="newsText" class="form-control" aria-label="With textarea" placeholder="Введите текст новости"></textarea>
                         </div>
                     </div>
 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label for="positionName">Тэг должности</label>
+                                    <select class="form-control" id="positionName">
+                                        <option>Библиотекарь</option>
+                                        <option>Программист</option>
+                                        <option>Директор</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label for="locationName">Тэг места</label>
+                                    <select class="form-control" id="locationName">
+                                        <option>Главный штаб</option>
+                                        <option>Не главный штаб</option>
+                                        <option>Важный штаб</option>
+                                        <option>Весёлый штаб</option>
+                                        <option>Грустный штаб</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#" class="btn btn-primary float-right m-1">Post</a>
                 </form>
             </div>
