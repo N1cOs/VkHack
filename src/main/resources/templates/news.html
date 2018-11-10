@@ -15,7 +15,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
           integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Новости</title>
 </head>
@@ -111,10 +111,11 @@
                     <div class="col">
                         <a class="text-info" data-toggle="collapse" role="button" aria-expanded="false"
                            th:attr="aria-controls=${new_obj.idNews}, href='#' + ${new_obj.idNews}"><h2
-                                th:text="${new_obj.getTitle()}"></h2></a>
+                                th:text="${new_obj.getTitle()}" name="heading"></h2></a>
                     </div>
                     <div class="col d-flex align-items-end justify-content-end">
-                        <a class="text-info" href="#">(Иванов С. С.)</a>
+                        <a class="text-info" href="#" th:text="${new_obj.getWorkerCreator().getShortName()}">(Иванов С.
+                            С.)</a>
                     </div>
                 </div>
                 <div class="collapse" th:attr="id=${new_obj.idNews}">
@@ -127,27 +128,47 @@
                 <div class="row">
                     <div class="col">
                         <span class="badge badge-primary" th:text="${new_obj.getDepartment().getDescription()}"></span>
-                    <!--ТУТ ГЕОТЭГ-->
-                    <span class="badge badge-warning">Геотэг</span>
+                        <!--ТУТ ГЕОТЭГ-->
+                        <span class="badge badge-warning">Геотэг</span>
+                    </div>
+                    <div class="col d-flex align-items-end justify-content-end">
+                        <!--Сюда парси время-->
+                        <p th:text="${#dates.format(new_obj.getCreatedTime(),'dd-MM-yyyy HH:mm')}"
+                           class="text-muted"></p>
+                    </div>
                 </div>
-                <div class="col d-flex align-items-end justify-content-end">
-                    <!--Сюда парси время-->
-                    <p class="text-muted">12.11.18 12:43</p>
-                </div>
-            </div>
 
-        </div>
+            </div>
         </div>
 
 
     </main><!-- /.container -->
 
+    <script>
+        let headings = document.getElementsByName('heading');
+        let isOne = Array.apply(null, Array(headings.length)).map(Number.prototype.valueOf,0);;
+        let readers = document.querySelectorAll('p[.font-weight-light text-muted]');
+        headings.forEach((heading, i) =>{
+            heading.addEventListener('click', (event) =>{
+                if(!isOne[i]){
+                    $.ajax({
+                        type:'post',
+                        url: "/read",
+                        success : function(data){
+                            let element = document.createElement('a');
+                            element.setAttribute('value', data);
+                            element.setAttribute('class', 'font-weight-light text-muted');
+                            readers[i].appendChild(element);
+                        }
+                    });
+                }
+                isOne[i] = 1;
+            });
+        });
+    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>

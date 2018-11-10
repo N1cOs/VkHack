@@ -112,4 +112,8 @@ public class Worker {
     public Position getPosition() {
         return position;
     }
+
+    public String getShortName(){
+        return "(" +  surname + " " + name.charAt(0) + ". " + patronymic.charAt(0) + ".)";
+    }
 }
