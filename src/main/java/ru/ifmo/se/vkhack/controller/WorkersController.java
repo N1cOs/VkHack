@@ -24,6 +24,7 @@ public class WorkersController {
     @RequestMapping(value = "/employee/search", method = RequestMethod.POST)
     public String getSuitableEmployees(@RequestParam("search") String searchingInfo, Model model){
         Iterable<Worker> workers = workerRepository.findAll();
+        String[] words = searchingInfo.split("\\s+");
         List<Worker> matchWorkers = new ArrayList<>();
         workers.forEach(worker -> {
             if(worker.getName().equalsIgnoreCase(searchingInfo) || worker.getSurname().equalsIgnoreCase(searchingInfo) ||

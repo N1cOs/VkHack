@@ -8,4 +8,5 @@ import java.util.Collection;
 public interface WorkerRepository extends CrudRepository<Worker, Long> {
     Collection<Worker> findAllBySurname(String surname);
     Worker findByIdWorker(Long idWorker);
+    Worker findByEmail(String email);
 }
