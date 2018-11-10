@@ -47,9 +47,9 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Телефон<span class="badge badge-pill" th:text="${worker.phone}"></span></li>
-                <li class="list-group-item">email<span class="badge badge-pill" th:text="${worker.email}"></span></li>
+                <li class="list-group-item">Электронная почта<span class="badge badge-pill" th:text="${worker.email}"></span></li>
                 <li class="list-group-item">Корпус<span class="badge badge-pill" th:text="${worker.getDepartment().getBody().getName()}"></span></li>
-                <li class="list-group-item">вк<span class="badge badge-pill">vk.com/username</span></li>
+                <li class="list-group-item">Ссылка в ВК<span class="badge badge-pill">vk.com/username</span></li>
 
             </ul>
         </div>
@@ -57,18 +57,18 @@
             <h2 th:text="${worker.name} + ' ' +  ${worker.surname} + ' ' + ${worker.patronymic}"></h2>
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    должность
+                    Должность
                     <span class="badge badge-pill" th:text="${worker.getPosition().getName()}">
                     </span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    подразделение
+                    Подразделение
                     <span class="badge badge-pill" th:text="${worker.getDepartment().description}">
                     podrazdeleniyeName
                     </span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    график
+                    График работы
                     <span class="badge badge-pill"  th:text="${worker.getWorkTime()}">
                     </span>
                 </li>
