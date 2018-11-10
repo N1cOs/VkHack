@@ -1,5 +1,8 @@
 package ru.ifmo.se.vkhack.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,6 +18,9 @@ public class News {
     private Worker workerCreator;
 
     private String description;
+    @Setter
+    @Getter
+    private String title;
     @Column(name = "creating_time")
     private Date createdTime;
     @Column(name = "target_time")
