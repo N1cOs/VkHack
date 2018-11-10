@@ -26,12 +26,14 @@ public class WorkersController {
         Iterable<Worker> workers = workerRepository.findAll();
         String[] words = searchingInfo.split("\\s+");
         List<Worker> matchWorkers = new ArrayList<>();
-        workers.forEach(worker -> {
-            if(worker.getName().equalsIgnoreCase(searchingInfo) || worker.getSurname().equalsIgnoreCase(searchingInfo) ||
-                    worker.getPatronymic().equalsIgnoreCase(searchingInfo)){
-                matchWorkers.add(worker);
-            }
-        });
+        for (String word : words) {
+            workers.forEach(worker -> {
+                if((worker.getName().equalsIgnoreCase(word) || worker.getSurname().equalsIgnoreCase(word) ||
+                        worker.getPatronymic().equalsIgnoreCase(word)) && !matchWorkers.contains(worker)){
+                    matchWorkers.add(worker);
+                }
+            });
+        }
         if(matchWorkers.size() == 0){
             model.addAttribute("noWorkers", "Извините, но Ваш запрос не дал положительных результатов");
             return "searchAnswer";

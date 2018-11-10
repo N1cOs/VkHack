@@ -1,5 +1,7 @@
 package ru.ifmo.se.vkhack.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,6 @@ import java.util.List;
 @RequestMapping("/news")
 public class NewsController {
     private final NewsRepository newsRepository;
-
     private final WorkerRepository workerRepository;
 
     @Autowired

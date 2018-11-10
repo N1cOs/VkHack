@@ -5,4 +5,5 @@ import ru.ifmo.se.vkhack.domain.Body;
 
 public interface BodyRepository extends CrudRepository<Body, Long> {
     Body findByIdBody(Long idBody);
+    Body findByName(String name);
 }

@@ -1,7 +1,6 @@
 package ru.ifmo.se.vkhack.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.context.annotation.Primary;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +9,7 @@ import java.util.Date;
 public class News {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_new")
     private Long idNews;
 
@@ -18,8 +18,6 @@ public class News {
     private Worker workerCreator;
 
     private String description;
-    @Setter
-    @Getter
     private String title;
     @Column(name = "creating_time")
     private Date createdTime;
@@ -36,6 +34,14 @@ public class News {
         return workerCreator;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+
+        return title;
+    }
 
     @JoinColumn(name = "id_department")
     @ManyToOne
