@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Navbar</title>
-    <!--<link rel="stylesheet" href="../bootstrap.min.css">-->
-<<<<<<< HEAD
-    <!--<script src="../bootstrap.min.jscss"></script>-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-=======
-    <!--<script src="../bootstrap.min.js"></script>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 
-    <script src="http://www.w3schools.com/lib/w3data.js"></script>
->>>>>>> 291659b90498d3e471599d93eb8532c7f2ec708a
 </head>
 
 <body>
 
-<div w3-include-html="navbar.html"></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h4 class="text-white navbar-brand"><img src="http://www.hermitagemuseum.org/statictest/img/logo_top.png" alt="" style="height: 30px">
+        Эрмитаж</h4>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<script>
-    w3IncludeHTML();
-</script>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="news.html">Новости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="map.html">Карта</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="search.html">Работники</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="btn btn-light active" href="profile.html">Профиль <span class="oi oi-person" title="person" aria-hidden="true"></span></a></li>
+        </ul>
+    </div>
+</nav>
 
 <div class="container main-content">
 

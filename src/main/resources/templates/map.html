@@ -15,17 +15,35 @@
 
     <title>Карта</title>
 
-
-    <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 
 <body>
 
-<div w3-include-html="navbar.html"></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h4 class="text-white navbar-brand"><img src="http://www.hermitagemuseum.org/statictest/img/logo_top.png" alt="" style="height: 30px">
+        Эрмитаж</h4>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<script>
-    w3IncludeHTML();
-</script>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="news.html">Новости</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="map.html">Карта</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="search.html">Работники</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="btn btn-light" href="profile.html">Профиль <span class="oi oi-person" title="person" aria-hidden="true"></span></a></li>
+        </ul>
+    </div>
+</nav>
 
 <main role="main" class="container">
         <div class="row">
