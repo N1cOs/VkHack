@@ -21,18 +21,34 @@ public class Worker {
     @JoinColumn(name = "id_position")
     private Position position;
 
+    @ManyToOne
+    @JoinColumn(name = "id_department")
+    private Department department;
+
+    @ManyToOne
+    @JoinColumn(name = "group_lead_id")
+    private Worker groupLead;
+
+    @Override
+    public String toString() {
+        return name + surname + patronymic + email + phone + position.getName() + department.getDescription();
+    }
+
+    public void setGroupLead(Worker groupLead) {
+        this.groupLead = groupLead;
+    }
+
+    public Worker getGroupLead() {
+        return groupLead;
+    }
+
     public void setDepartment(Department department) {
         this.department = department;
     }
 
     public Department getDepartment() {
-
         return department;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "id_department")
-    private Department department;
 
     public void setIdWorker(Long idWorker) {
         this.idWorker = idWorker;
@@ -67,10 +83,8 @@ public class Worker {
     }
 
     public Long getIdWorker() {
-
         return idWorker;
     }
-
     public String getName() {
         return name;
     }

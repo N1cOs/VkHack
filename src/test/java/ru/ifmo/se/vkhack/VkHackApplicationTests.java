@@ -7,10 +7,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import ru.ifmo.se.vkhack.domain.Body;
+import ru.ifmo.se.vkhack.domain.Department;
 import ru.ifmo.se.vkhack.domain.News;
 import ru.ifmo.se.vkhack.domain.Worker;
+import ru.ifmo.se.vkhack.repository.BodyRepository;
+import ru.ifmo.se.vkhack.repository.DepartmentRepository;
 import ru.ifmo.se.vkhack.repository.NewsRepository;
 import ru.ifmo.se.vkhack.repository.WorkerRepository;
+
+import java.util.Collection;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -22,10 +28,14 @@ public class VkHackApplicationTests {
     WorkerRepository repository;
     @Autowired
     NewsRepository newsRepository;
+    @Autowired
+    BodyRepository bodyRepository;
+    @Autowired
+    DepartmentRepository departmentRepository;
 
     @Test
     public void contextLoads() {
-        Iterable<Worker> workers = repository.findAllBySurname("Петрова");
+        Collection<Worker> workers = repository.findAllBySurname("Петрова");
         workers.forEach(n -> logger.info(n.getName()));
     }
 
@@ -33,8 +43,15 @@ public class VkHackApplicationTests {
     public void testNews(){
         Worker ivanov = repository.findByIdWorker(2l);
         logger.info(ivanov.getName());
-        Iterable<News> suitableNews = newsRepository.findAllByDepartment(ivanov.getDepartment());
+        Collection<News> suitableNews = newsRepository.findAllByDepartment(ivanov.getDepartment());
         suitableNews.forEach(n -> logger.info(n.getDescription()));
+    }
+
+    @Test
+    public void testBody(){
+        Department department = departmentRepository.findByIdDepartment(11l);
+        logger.info(department.getDescription());
+        logger.info(department.getBody().getAddress());
     }
 
 }

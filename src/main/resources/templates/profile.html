@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Navbar</title>
     <!--<link rel="stylesheet" href="../bootstrap.min.css">-->
+<<<<<<< HEAD
     <!--<script src="../bootstrap.min.jscss"></script>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+=======
+    <!--<script src="../bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+>>>>>>> 291659b90498d3e471599d93eb8532c7f2ec708a
 </head>
+
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand" style="padding-top: 1px">
-                <img src="http://www.hermitagemuseum.org/statictest/img/logo_top.png" alt="" style="height: 48px">
-            </a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Карта</a></li>
-            <li><a href="#">Работники</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right: 5px"></span>Профиль</a></li>
-        </ul>
-    </div>
-</nav>
+
+<div w3-include-html="navbar.html"></div>
+
+<script>
+    w3IncludeHTML();
+</script>
 
 <div class="container main-content">
 
@@ -40,41 +38,41 @@
                 <h4 class="card-title">Контакты</h4>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Телефон <span class="badge badge-pill">+79999999999</span></li>
-                <li class="list-group-item">мыло <span class="badge badge-pill">rabotyaga@rabota.rab</span></li>
-                <li class="list-group-item">корпус <span class="badge badge-pill">ГК</span></li>
-                <li class="list-group-item">вк <span class="badge badge-pill">vk.com/username</span></li>
+                <li class="list-group-item">Телефон<span class="badge badge-pill" th:text="${worker.phone}"></span></li>
+                <li class="list-group-item">email<span class="badge badge-pill" th:text="${worker.email}"></span></li>
+                <li class="list-group-item">Корпус<span class="badge badge-pill" th:text="${worker.getDepartment().getBody().getName()}"></span></li>
+                <li class="list-group-item">вк<span class="badge badge-pill">vk.com/username</span></li>
 
             </ul>
         </div>
         <div class="col-md-7">
-            <h2> Фамилия Имяимя Отчествооо</h2>
+            <h2 th:text="${worker.name} + ' ' +  ${worker.surname} + ' ' + ${worker.patronymic}"></h2>
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     должность
-                    <span class="badge badge-pill">
-                    Директор
-                </span>
+                    <span class="badge badge-pill" th:text="${worker.getPosition().getName()}">
+                    </span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     подразделение
-                    <span class="badge badge-pill">
+                    <span class="badge badge-pill" th:text="${worker.getDepartment().description}">
                     podrazdeleniyeName
-                </span>
+                    </span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     график
-                    <span class="badge badge-pill">
-                    пн-пт с 9 до 18
-                </span>
+                    <span class="badge badge-pill"  th:text="${worker.getWorkTime()}">
+                    </span>
                 </li>
             </ul>
         </div>
-
-
     </div>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
