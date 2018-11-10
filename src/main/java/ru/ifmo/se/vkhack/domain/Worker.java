@@ -29,6 +29,11 @@ public class Worker {
     @JoinColumn(name = "group_lead_id")
     private Worker groupLead;
 
+    @Override
+    public String toString() {
+        return name + surname + patronymic + email + phone + position.getName() + department.getDescription();
+    }
+
     public void setGroupLead(Worker groupLead) {
         this.groupLead = groupLead;
     }
