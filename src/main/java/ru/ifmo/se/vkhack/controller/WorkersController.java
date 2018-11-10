@@ -31,6 +31,10 @@ public class WorkersController {
                 matchWorkers.add(worker);
             }
         });
+        if(matchWorkers.size() == 0){
+            model.addAttribute("noWorkers", "Извините, но Ваш запрос не дал положительных результатов");
+            return "searchAnswer";
+        }
         model.addAttribute("workers", matchWorkers);
         return "searchAnswer";
     }
