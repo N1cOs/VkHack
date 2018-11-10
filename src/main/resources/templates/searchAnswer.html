@@ -8,28 +8,26 @@
     <div class="col-md-4">
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                телефон
-                <span th:text="${worker.phone}" class="badge badge-pill">
-
-                </span>
+                Мобильный телефон
+                <span th:text="${worker.phone}" class="badge badge-pill"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                должность
+                Электронная почта
+                <span class="badge badge-pill" th:text="${worker.email}"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Должность
                 <span class="badge badge-pill" th:text="${worker.position.name}">
                 </span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                мыло
-                <span class="badge badge-pill" th:text="${worker.email}"></span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                часы работы
-                <span class="badge badge-pill" th:text="${worker.workTime}"></span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                корпус
+                Подразделение
                 <span class="badge badge-pill" th:text="${worker.department.description}">
                 </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Часы работы
+                <span class="badge badge-pill" th:text="${worker.workTime}"></span>
             </li>
         </ul>
     </div>
