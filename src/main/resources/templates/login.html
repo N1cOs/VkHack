@@ -26,50 +26,27 @@
         <div class="container">
 
 
-            <div class="row">
-                <div class="col-md-6 mx-auto">
+            <div class="row my-5">
+                <div class="col-md-6 mx-auto ">
                     <form th:action="@{/login}" method="post">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
+                            <label class="bg-primary" style="color: #fff;">Email address</label>
+                            <input type="email" class="form-control"
                                    placeholder="Enter email" name="username">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
+                            <label class="bg-primary" style="color: #fff;">Password</label>
+                            <input type="password" class="form-control"
                                    placeholder="Password" name="password">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <!--<div class="card card-signin my-5">-->
-                    <!--<div class="card-body">-->
-                    <!--<h5 class="card-title text-center">Sign In</h5>-->
-                    <!--<form action="" class="form-signin"></form>-->
-                    <!--</div>-->
-                    <!--</div>-->
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--<div class="bg-image"></div>-->
-
-<!--<div class="bg-text">-->
-<!--<form th:action="@{/login}" method="post">-->
-<!--<div class="form-group">-->
-<!--<label>Введите адрес электронной почты:<input name="username" type="text"></label>-->
-<!--</div>-->
-<!--<div class="form-group">-->
-<!--<label>Введите адрес пароль:<input name="password" type="password"></label>-->
-<!--</div>-->
-
-<!--<input type="submit" value="Войти">-->
-<!--</form>-->
-<!--</div>-->
-
-<!--</div>-->
 
 </body>
 </html>
