@@ -70,10 +70,10 @@
 
         <div class="card m-3" th:each="new_obj : ${news}">
             <div class="card-body">
-                <h2 th:text="${new_obj.idNews}"></h2>
+                <h2 th:text="${new_obj.getTitle()}"></h2>
                 <p th:text="${new_obj.description}"></p>
-                <div class="dropdown-divider" th:text="${new_obj.getDepartment().getDescription()}"></div>
-                <span class="badge badge-primary"></span>
+                <div class="dropdown-divider"></div>
+                <span class="badge badge-primary" th:text="${new_obj.getDepartment().getDescription()}"></span>
             </div>
         </div>
 
