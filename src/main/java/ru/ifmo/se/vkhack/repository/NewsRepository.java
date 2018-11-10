@@ -4,6 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 import ru.ifmo.se.vkhack.domain.Department;
 import ru.ifmo.se.vkhack.domain.News;
 
+import java.util.Collection;
+
 public interface NewsRepository extends CrudRepository<News, Long> {
-    Iterable<News> findAllByDepartment(Department department);
+    Collection<News> findAllByDepartment(Department department);
 }
