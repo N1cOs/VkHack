@@ -4,41 +4,29 @@
     <meta charset="UTF-8">
     <title>Search</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
     <style>
         div .col-md-10{
             margin-top: 15px; background: #d1ecf1; border: 1px solid red;
         }
     </style>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-inverse">
 
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand" style="padding-top: 1px">
-                    <img src="http://www.hermitagemuseum.org/statictest/img/logo_top.png" alt="" style="height: 48px">
-                </a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="#">Новости</a></li>
-                <li><a href="#">Карта</a></li>
-                <li><a href="/employee">Работники</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right: 5px"></span>Профиль</a></li>
-            </ul>
-        </div>
-    </nav>
+<body>
+
+<div w3-include-html="navbar.html"></div>
+
+<script>
+    w3IncludeHTML();
+</script>
     <div class="container main-content">
 
         <!-- search -->
-        <div class="col-md-6 col-md-offset-3">
+        <div class="m-3 col-md-offset-3">
             <input id="search_employee" class="form-control" name="search" type="text" placeholder="Search" aria-label="Search">
         </div>
 
@@ -61,5 +49,8 @@
             }
         };
     </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

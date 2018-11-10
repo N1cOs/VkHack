@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+
+    <title>Карта</title>
+
+
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+</head>
+
+<body>
+
+<div w3-include-html="navbar.html"></div>
+
+<script>
+    w3IncludeHTML();
+</script>
+
+<main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <img src="../images/karta_novigrada.jpg" class="card-img-top" alt="Responsive image">
+                    <div class="card-body container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="mapName">Выберите здание</label>
+                                    <select class="form-control" id="mapName">
+                                        <option>Главный штаб</option>
+                                        <option>Не главный штаб</option>
+                                        <option>Важный штаб</option>
+                                        <option>Весёлый штаб</option>
+                                        <option>Грустный штаб</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-end justify-content-end">
+                                <button type="button" class="btn btn-success">Выбрать</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="card-footer">Это типо карта</div>-->
+                </div>
+            </div>
+            <div class="col">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header"><h2>F.A.Q.</h2></div>
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    Пусто
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    Пусто
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    Пусто
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header"><h1>Лента новостей дофига</h1></div>
+                    <div class="card m-3">
+                        <div class="card-body">
+                            <h2>Заголовок новости</h2>
+                            <p>Это самая офигенная новость для самых офигенных работников Эрмитажа,
+                                если вы посмотрите вниз, то увидите метаданные, c которыми мы на самом деле ещё не определились. </p>
+                            <div class="dropdown-divider"></div>
+                            <span class="badge badge-primary">ТЭГИТЭГЭ</span>
+                            <span class="badge badge-secondary">ЭГИТЭГИТЭГ</span>
+                            <span class="badge badge-warning">ГИТЭГИТЭ</span>
+                            <span class="badge badge-danger">ГИТЭЭГИ</span>
+                            <span class="badge badge-info">ИТИТГИТ</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</main><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
