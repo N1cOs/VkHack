@@ -110,12 +110,12 @@
                 </div>
                 <div class="collapse" id="postCollapse">
                     <p th:text="${new_obj.description}"></p>
+                    <p class="font-weight-light text-muted">Прочитали: <a class="font-weight-light text-muted" href="#">Алексей</a>, <a class="font-weight-light text-muted" href="#">Сергей</a>, <a class="font-weight-light text-muted" href="#">Михаил</a></p>
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col">
                         <span class="badge badge-primary" th:text="${new_obj.getDepartment().getDescription()}"></span>                    </div>
-                    <div class="col-1">
                         <!--ТУТ ГЕОТЭГ-->
                         <span class="badge badge-warning">Геотэг</span>
                     </div>
