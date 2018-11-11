@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="./css/custom.css">
     <title>Карта</title>
 
 </head>
@@ -45,10 +46,34 @@
     </div>
 </nav>
 
-<main role="main" class="container">
+<main role="main" class="container my-2">
         <div class="row">
             <div class="col-8">
                 <div class="card">
+                    <form>
+                    <div class="container m-3">
+                        <div class="row">
+                            <div class="col">
+                                <p class="font-weight-bold">Навигация:</p>
+                            </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="fromNav" aria-describedby="fromNavHelp" placeholder="Откуда">
+                                            <small id="fromNavHelp" class="form-text text-muted">Введите начало маршрута</small>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="toNav" aria-describedby="toNavHelp" placeholder="Куда">
+                                        <small id="toNavHelp" class="form-text text-muted">Введите конец маршрута</small>
+                                    </div>
+                                    </div>
+                                    <div class="col">
+                                    <button type="submit" class="btn btn-custom-y">Поехали <span class="oi oi-map"></span></button>
+                                    </div>
+                        </div>
+                    </div>
+                    </form>
                     <img src="../images/karta_novigrada.jpg" class="card-img-top" alt="Responsive image">
                     <div class="card-body container">
                         <div class="row">
@@ -57,15 +82,12 @@
                                     <label for="mapName">Выберите здание</label>
                                     <select class="form-control" id="mapName">
                                         <option>Главный штаб</option>
-                                        <option>Не главный штаб</option>
-                                        <option>Важный штаб</option>
-                                        <option>Весёлый штаб</option>
-                                        <option>Грустный штаб</option>
+                                        <option>Михайловский замок</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col d-flex align-items-end justify-content-end">
-                                <button type="button" class="btn btn-success">Выбрать</button>
+                                <button type="button" class="btn btn-custom-s">Выбрать</button>
                             </div>
                         </div>
                     </div>
@@ -146,7 +168,7 @@
                             <div class="dropdown-divider"></div>
                             <div class="row">
                                 <div class="col">
-                                    <span class="badge badge-primary">ТЭГИТЭГasdasdasdasdasdasdasdasdasdasdasdЭ</span>
+                                    <span class="badge badge-custom-p">ТЭГИТЭГasd</span>
                                     <span class="badge badge-warning">ГИТЭГИТЭ</span>
                                 </div>
                                 <div class="col d-flex align-items-end justify-content-end">

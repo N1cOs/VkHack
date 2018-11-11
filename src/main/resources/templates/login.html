@@ -15,10 +15,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./css/custom.css">
 
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h4 class="text-white navbar-brand"><img src="http://www.hermitagemuseum.org/statictest/img/logo_top.png" alt=""
+                                             style="height: 30px">
+        Эрмитаж</h4>
+
+</nav>
 
 <div class="view"
      style="background-image: url('https://www.annees-de-pelerinage.com/wp-content/uploads/2015/02/hermitage-museum-interiors-winter-palace-st-petersburg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 100vh; ">
@@ -27,20 +34,20 @@
 
 
             <div class="row my-5">
-                <div class="col-md-6 mx-auto ">
+                <div class="col-md-6 mx-auto">
                     <form th:action="@{/login}" method="post">
                         <div class="form-group">
-                            <label class="bg-primary" style="color: #fff;">Email address</label>
+                            <label class="bg-dark" style="color: #fff;">Email address</label>
                             <input type="email" class="form-control"
                                    placeholder="Enter email" name="username">
                         </div>
                         <div class="form-group">
-                            <label class="bg-primary" style="color: #fff;">Password</label>
+                            <label class="bg-dark" style="color: #fff;">Password</label>
                             <input type="password" class="form-control"
                                    placeholder="Password" name="password">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-custom-y">Submit</button>
                     </form>
                 </div>
             </div>

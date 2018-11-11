@@ -1,0 +1,39 @@
+.bg-dark{
+    background-color: #439F96 !important;
+
+}
+.btn-custom-y{
+    background-color: #EFD06E;
+    border-color: #ffc107;
+}
+.btn-custom-s{
+    background-color: #F6BA4F;
+    border-color: #ffc107;
+    color: black;
+}
+.btn-custom-r{
+    background-color: #D14E45;
+}
+.btn-custom-s:hover{
+    background-color: #ffc107;
+    border-color: #ffc107;
+    
+}
+label.bg-dark{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.badge-custom-p{
+    background-color: #728DA4;
+}
+.btn-link{
+    color: #171a1d;
+}
+
+.btn-custom-grey{
+    background-color: #D5DADF;
+    color: #000;
+}
+.btn-custom-grey:hover{
+    color: #728DA4;
+}

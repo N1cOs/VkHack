@@ -1,9 +1,9 @@
 package ru.ifmo.se.vkhack.domain;
 
-import org.springframework.context.annotation.Primary;
-
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class News {
@@ -24,6 +24,21 @@ public class News {
     @Column(name = "target_time")
     private Date targetTime;
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name="readnews",
+            joinColumns = {@JoinColumn(name = "id_news")},
+            inverseJoinColumns = {@JoinColumn(name = "id_worker")}
+    )
+    private Set<Worker> workerSet = new HashSet<>();
+
+    public Set<Worker> getWorkerSet() {
+        return workerSet;
+    }
+
+    public void setWorkerSet(Set<Worker> workerSet) {
+        this.workerSet = workerSet;
+    }
 
     public void setWorkerCreator(Worker workerCreator) {
         this.workerCreator = workerCreator;

@@ -15,7 +15,11 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
           integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous"/>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+=======
+    <link rel="stylesheet" href="./css/custom.css">
+>>>>>>> faabcfbd0acd39747467f38f181e43c971bd8ad7
 
     <title>Новости</title>
 </head>
@@ -45,7 +49,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="btn btn-light" href="/profile">Профиль <span class="oi oi-person" title="person"
+                <li><a class="btn btn-custom-grey" href="/profile">Профиль <span class="oi oi-person" title="person"
                                                                            aria-hidden="true"></span></a></li>
             </ul>
         </div>
@@ -54,8 +58,8 @@
     <main role="main" class="container">
 
         <!--В ЭТОЙ КАРТОЧКЕ ВВОД НОВОСТИ-->
-        <div class="card">
-            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+        <div class="card my-2">
+            <a class="btn btn-custom-s" data-toggle="collapse" href="#collapseExample" role="button"
                aria-expanded="false" aria-controls="collapseExample">
                 Написать новость
             </a>
@@ -100,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <input class="btn btn-primary float-right m-1" value="Опубликовать" type="submit">
+                    <input class="btn btn-custom-r float-right m-1" value="Опубликовать" type="submit">
                 </form>
             </div>
         </div>
@@ -120,10 +124,11 @@
                 </div>
                 <div class="collapse" th:attr="id=${new_obj.idNews}">
                     <p th:text="${new_obj.description}"></p>
-                    <p class="font-weight-light text-muted">Прочитали: <a class="font-weight-light text-muted" href="#">Алексей</a>,
-                        <a class="font-weight-light text-muted" href="#">Сергей</a>, <a
-                                class="font-weight-light text-muted" href="#">Михаил</a></p>
+                    <p class="font-weight-light text-muted">Прочитали: </p>
                 </div>
+                <!--<a class="font-weight-light text-muted" href="#">Алексей</a>,-->
+                <!--<a class="font-weight-light text-muted" href="#">Сергей</a>, <a-->
+                    <!--class="font-weight-light text-muted" href="#">Михаил</a>-->
                 <div class="dropdown-divider"></div>
                 <div class="row">
                     <div class="col">
@@ -144,28 +149,6 @@
 
     </main><!-- /.container -->
 
-    <script>
-        let headings = document.getElementsByName('heading');
-        let isOne = Array.apply(null, Array(headings.length)).map(Number.prototype.valueOf,0);;
-        let readers = document.querySelectorAll('p[.font-weight-light text-muted]');
-        headings.forEach((heading, i) =>{
-            heading.addEventListener('click', (event) =>{
-                if(!isOne[i]){
-                    $.ajax({
-                        type:'post',
-                        url: "/read",
-                        success : function(data){
-                            let element = document.createElement('a');
-                            element.setAttribute('value', data);
-                            element.setAttribute('class', 'font-weight-light text-muted');
-                            readers[i].appendChild(element);
-                        }
-                    });
-                }
-                isOne[i] = 1;
-            });
-        });
-    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -175,5 +158,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script>
+        let headings = document.getElementsByName('heading');
+        let readers = document.querySelectorAll('p.font-weight-light');
+        headings.forEach((heading, i) =>{
+            heading.addEventListener('click', (event) =>{
+                    let idNews = heading.parentElement.getAttribute('aria-controls');
+                    $.ajax({
+                        type:'post',
+                        url: "/read",
+                        data : {'newsId' : idNews},
+                        success : function(data){
+                            let names = JSON.parse(data);
+                            names.forEach((name) =>{
+                                let element = document.createElement('a');
+                                element.innerText = name;
+                                element.setAttribute('class', 'font-weight-light text-muted');
+                                readers[i - 1].appendChild(element);
+                            });
+                        }
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
