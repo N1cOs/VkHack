@@ -1,0 +1,12 @@
+<div xmlns:th="http://www.thymeleaf.org" class="col-md-10 col-md-offset-1" style="" >
+    <p th:text="${err}"></p>
+    <p th:text="${count}"></p>
+    <div style="display: None" th:each="coordinate : ${coordinates}">
+        <p class="x" th:text="${coordinate.getKey()}"></p>
+        <p class="y" th:text="${coordinate.getValue()}"></p>
+    </div>
+    <div style="display: None">
+        <p class="x">LOL</p>
+        <p class="y">KEK</p>
+    </div>
+</div>
