@@ -8,4 +8,5 @@ import java.util.Collection;
 
 public interface NewsRepository extends CrudRepository<News, Long> {
     Collection<News> findAllByDepartment(Department department);
+    News findByIdNews(Long id);
 }

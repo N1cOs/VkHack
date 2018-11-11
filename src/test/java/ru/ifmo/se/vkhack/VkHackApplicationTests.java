@@ -11,12 +11,12 @@ import ru.ifmo.se.vkhack.domain.Body;
 import ru.ifmo.se.vkhack.domain.Department;
 import ru.ifmo.se.vkhack.domain.News;
 import ru.ifmo.se.vkhack.domain.Worker;
-import ru.ifmo.se.vkhack.repository.BodyRepository;
-import ru.ifmo.se.vkhack.repository.DepartmentRepository;
-import ru.ifmo.se.vkhack.repository.NewsRepository;
-import ru.ifmo.se.vkhack.repository.WorkerRepository;
+import ru.ifmo.se.vkhack.repository.*;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -49,9 +49,10 @@ public class VkHackApplicationTests {
 
     @Test
     public void testBody(){
-        Department department = departmentRepository.findByIdDepartment(11l);
-        logger.info(department.getDescription());
-        logger.info(department.getBody().getAddress());
+        News news = newsRepository.findByIdNews(1l);
+        Set<Worker> workerSet = news.getWorkerSet();
+        workerSet.forEach(n -> logger.info(n.getName()));
+
     }
 
 }

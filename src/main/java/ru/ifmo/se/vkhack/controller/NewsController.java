@@ -21,6 +21,8 @@ import java.util.List;
 public class NewsController {
     private final NewsRepository newsRepository;
     private final WorkerRepository workerRepository;
+    private final static Logger logger = LoggerFactory.getLogger(NewsController.class);
+
 
     @Autowired
     public NewsController(NewsRepository newsRepository, WorkerRepository workerRepository) {

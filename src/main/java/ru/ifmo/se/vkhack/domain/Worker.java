@@ -1,6 +1,8 @@
 package ru.ifmo.se.vkhack.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Worker {
@@ -29,9 +31,21 @@ public class Worker {
     @JoinColumn(name = "group_lead_id")
     private Worker groupLead;
 
+    @ManyToMany(mappedBy = "workerSet")
+    private Set<News> readNews = new HashSet<>();
+
     @Override
     public String toString() {
         return name + surname + patronymic + email + phone + position.getName() + department.getDescription();
+    }
+
+    public void setReadNews(Set<News> readNews) {
+        this.readNews = readNews;
+    }
+
+    public Set<News> getReadNews() {
+
+        return readNews;
     }
 
     public void setGroupLead(Worker groupLead) {
@@ -111,5 +125,9 @@ public class Worker {
 
     public Position getPosition() {
         return position;
+    }
+
+    public String getShortName(){
+        return "(" +  surname + " " + name.charAt(0) + ". " + patronymic.charAt(0) + ".)";
     }
 }
