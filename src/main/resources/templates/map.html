@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
 
     <meta charset="utf-8">
 
@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" th:href="@{./css/custom.css}">4
+    <link rel="stylesheet" href="css/custom.css">
     <title>Карта</title>
 
 </head>
@@ -74,7 +75,7 @@
                         </div>
                     </div>
                     </form>
-                    <img src="../images/karta_novigrada.jpg" class="card-img-top" alt="Responsive image">
+                    <img th:src="@{../images/karta_novigrada.jpg}" src="../images/karta_novigrada.jpg" class="card-img-top" alt="Responsive image">
                     <div class="card-body container">
                         <div class="row">
                             <div class="col">
